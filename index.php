@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录-login</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="lib/jquery-min-3.3.1.js"></script>
+    <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!--固定顶部-->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> -->
+                <a href="javascript:void(0);" class="navbar-brand">Welcome</a>
+            </div>
+            <!-- <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">  
+                    <li class="active"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li> 
+                    <li><a href="registered.html"><span class="glyphicon glyphicon-file"></span> 注册</a></li> 
+                    <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-blackboard"></span> 0.0.4</a></li>
+                </ul> 
+            </div> -->
+        </div>
+    </nav>
+    <!--结束顶部-->
+    <!--登录部分-->
+    <div class="container">
+        <form action="index.php" method="POST" class="form-horizontal container-fluid" role="form">
+            <div class="form-group">
+                <label for="InputAccount" class="control-label text-center col-md-4 col-lg-4">账号</label>
+                <div class="col-md-4 col-lg-4">
+                    <input type="text" maxlength="18" placeholder="123456789@example.com" class="form-control" name="useraccount">
+                </div>
+            </div> 
+            <div class="form-group">
+                <label for="InputPassword" class="control-label text-center col-md-4 col-lg-4">密码</label>
+                <div class="col-md-4 col-lg-4">
+                    <input type="password" maxlength="16" placeholder="Password" class="form-control" name="userpassword">
+                </div>
+            </div>
+
+            <!-- <div class="checkbox text-center">
+                <label for="RememberthePassword" class="col-xs-12 col-md-4 col-md-offset-4">
+                    <input type="checkbox">记住密码
+                </label>
+            </div> -->
+            
+            <div class="col-md-4 col-md-offset-4">
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                        <input class="btn btn-primary btn-block col-md-8 col-lg-8" type="submit" value="登录">
+                    </div>
+                    <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default btn-block col-md-8 col-lg-8" disabled="disabled">注册（施工中）</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <!--结构结束-->
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>如何用php输入账号密码进入网页</title>
+    <link rel="stylesheet" href="../../styles/css/index.css">
+    <link rel="stylesheet" href="../../styles/css/php.css">
+    <link rel="stylesheet" href="../../styles/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/lib/swiper-4.4.6/dist/css/swiper.min.css">
+    <script src="../../styles/lib/jquery-min-3.3.1.js"></script>
+    <script src="../../styles/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../../styles/lib/swiper-4.4.6/dist/js/swiper.min.js"></script>
+</head>
+<body>
+    <script src="../../script/header.js"></script>
+    <div id="main" class="container">
+        <h1 class="well">如何用php输入账号密码进入网页</h1>
+        <div class="row">
+            <div class="container">
+                <p>逻辑图↓</p>
+                <xmp>
+[www.MyWeb.com]
+|
+post.php
+|
+|
+|
+post.html -- 登录页面 <-----------
+|                                 |错
+|                                 |
+|------------|                    |误
+             |                    |
+        yanzheng.php -- 判断 -----
+             |
+-------------|
+|  正  确
+|
+MyWeb.html -- 进入html页面
+                </xmp>
+                <div class="container-fluid">
+                    <ul>
+                        <li><p>post.php</p>
+                            <xmp>
+<?php 
+
+include './post.html';
+
+?>
+                            </xmp>
+                        </li>
+                        <li>
+                            <p>post.html</p>
+                            <xmp>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <div>
+        <form action="./yanzheng.php" method="POST">
+            <p>用户名:<input type="text" name="username"></p>
+            <p>密  码:<input type="password" name="password"></p>
+            <p><input type="submit" name="提交"></p>
+        </form>
+    </div>
+</body>
+</html>
+                            </xmp>
+                        </li>
+                        <li><p>yanzheng.php</p>
+                            <xmp>
+<?php 
+//定义变量名
+$user = 'helloworld';
+$password = 123456;
+$username = isset($_POST['username'])?$_POST['username']:'';
+$pass = isset($_POST['password'])?$_POST['password']:'';
+//判断
+if($user == $username && $password == $pass){
+    //echo 'here';die;
+    include './index.html';
+}else{
+    echo "SB,不存在此用户！";
+    include './post.html';
+}
+?>
+                            </xmp>
+                        </li>
+                    </ul>
+                    <a href="https://www.jb51.net/article/98673.htm">这个更详细</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
